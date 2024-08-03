@@ -9,6 +9,8 @@ Features
 - TypeScript
 - Prettier
 - Jest/TsJest support
+- StoryBook for component development
+- `npm run deploy` for deploying to docs folder (Github Pages)
 
 Extremely fast update and reload for small project editing:
 `webpack 5.93.0 compiled successfully in 59 ms`
