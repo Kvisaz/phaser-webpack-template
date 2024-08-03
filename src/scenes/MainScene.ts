@@ -25,5 +25,7 @@ export class MainScene extends Phaser.Scene {
     logo.setCollideWorldBounds(true);
 
     particles.startFollow(logo);
+
+    console.log('Game started');
   }
 }
