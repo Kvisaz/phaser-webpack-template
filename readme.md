@@ -10,6 +10,9 @@ Features
 - Prettier
 - Jest/TsJest support
 
+Extremely fast update and reload for small project editing:
+`webpack 5.93.0 compiled successfully in 59 ms`
+
 ## Why This Template?
 
 In the ever-evolving world of web development, it's easy to get caught up in the latest trends. However, sometimes the tried-and-true tools, when optimized correctly, can outperform the newcomers. This template is a testament to that philosophy.
