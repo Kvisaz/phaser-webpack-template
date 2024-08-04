@@ -8,7 +8,9 @@ const scaleConfig: Phaser.Types.Core.ScaleConfig = {
   height: 640
 };
 
-export type IPhaserConfig = Phaser.Types.Core.GameConfig;
+export interface IPhaserConfig extends Phaser.Types.Core.GameConfig {
+  scale: Phaser.Types.Core.ScaleConfig;
+}
 
 export const phaserGameConfig: IPhaserConfig = {
   width: 800,

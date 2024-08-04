@@ -6,6 +6,11 @@ import { IPhaserConfig, phaserGameConfig } from "../src/config";
 
 const config: IPhaserConfig = {
   ...phaserGameConfig,
+  scale: {
+    ...phaserGameConfig.scale,
+    mode: Phaser.Scale.NONE,
+    autoCenter: Phaser.Scale.NONE,
+  },
   scene: [new StoryScene(StoryScene.name)],
 };
 
