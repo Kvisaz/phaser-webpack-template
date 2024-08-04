@@ -5,7 +5,9 @@
   "scripts": {
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "storybook" : "webpack serve --mode development --config webpack.storybook.js",
+    "build-storybook" : "webpack --mode production --config webpack.storybook.js"
   },
   "keywords": [],
   "author": "",
