@@ -2,11 +2,15 @@
 
 Just copy and use with `npm run start`, `npm run build`
 
+- [Online Storybook Demo](https://kvisaz.github.io/react-game-components/storybook/index.html)
+- [GitHub](https://github.com/Kvisaz/phaser-webpack-template)
+
 Features
 - Webpack
 - Phaser 3.80
 - fast build (Phaser.js as static asset + esbuild-loader)
 - TypeScript
+- Storybook for component- driven development
 - Prettier
 - Jest/TsJest support
 
