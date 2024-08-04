@@ -7,7 +7,9 @@
     "build": "webpack --mode production",
     "typecheck": "tsc --noEmit",
     "storybook" : "webpack serve --mode development --config webpack.storybook.js",
-    "build-storybook" : "webpack --mode production --config webpack.storybook.js"
+    "build-storybook" : "webpack --mode production --config webpack.storybook.js",
+    "predeploy": "npm run build-storybook",
+    "deploy": "git add docs && git commit -m \"Deploy docs to GitHub Pages\" && git push"
   },
   "keywords": [],
   "author": "",
