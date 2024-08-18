@@ -57,8 +57,11 @@ module.exports = (env, argv) => {
       new CopyWebpackPlugin({
         patterns: [
           {
-            from: "src/assets",
-            to: "assets"
+            from: "public",
+            to: "",
+            globOptions: {
+              ignore: ["**/index.html"]
+            }
           }
         ]
       })

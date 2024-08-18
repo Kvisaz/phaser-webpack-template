@@ -1,5 +1,13 @@
 # Optimized Phaser Webpack Template
 
+## AssetPack experiment
+
+Pixi Assetpack is overengineered tool. It has lack of documentation and conflicts with current template build.
+
+Use it as standalone instrument.
+
+## Common section
+
 Just copy and use with `npm run start`, `npm run build`
 
 - [Online Storybook Demo](https://kvisaz.github.io/phaser-webpack-template/storybook/index.html)
