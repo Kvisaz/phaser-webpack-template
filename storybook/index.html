@@ -1,174 +1,197 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Phaser StoryBook</title>
-  <link rel="shortcut icon" href="assets/favicon.ico" />
-  <style>
-      html, body {
-          margin: 0;
-          padding: 0;
-          height: 100%;
-      }
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Phaser StoryBook</title>
+    <link rel="shortcut icon" href="assets/favicon.ico"/>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            touch-action: none;
+        }
 
-      .wrap {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          position: relative;
-      }
+        canvas {
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            -webkit-tap-highlight-color: transparent;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
 
-      .sidebar {
-          font-size: 14px;
-          background: burlywood;
-          height: 100%;
-          overflow-y: scroll;
-          min-width: 120px;
-          max-width: 240px;
-          box-sizing: border-box;
-          padding: 15px;
-          font-family: "Roboto", Verdana, sans-serif;
-          position: relative;
-      }
+        .wrap {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            position: relative;
+        }
 
-      .hidden {
-          display: none;
-      }
+        .sidebar {
+            font-size: 14px;
+            background: burlywood;
+            height: 100%;
+            overflow-y: scroll;
+            min-width: 200px;
+            max-width: 240px;
+            box-sizing: border-box;
+            padding: 15px;
+            font-family: "Roboto", Verdana, sans-serif;
+            position: relative;
+        }
 
-      .story {
-          padding: 5px;
-          width: 100%;
-          text-align: left;
-          border: 1px solid #dedede;
-          margin: 5px;
-          border-radius: 5px;
-          cursor: pointer;
-          user-select: none;
-          background: #b0f3b0;
-      }
+        .hidden {
+            display: none;
+        }
 
-      .story:hover {
-          background: #6bb06b;
-      }
+        .story {
+            padding: 5px;
+            width: 100%;
+            text-align: left;
+            border: 1px solid #dedede;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            user-select: none;
+            background: #b0f3b0;
+        }
 
-      .story:active, .story:focus {
-          background: #730e77;
-          color: wheat;
-      }
+        .story:hover {
+            background: #6bb06b;
+        }
 
-      .storyDelimiter {
-          padding: 12px 5px 5px;
-          width: 100%;
-          color: #3E394F;
-          opacity: 0.7;
-      }
+        .story:active, .story:focus {
+            background: #730e77;
+            color: wheat;
+        }
 
-      .sidebar h1 {
-          font-size: 18px;
-          font-weight: 600;
-      }
+        .storyDelimiter {
+            padding: 12px 5px 5px;
+            width: 100%;
+            color: #3E394F;
+            opacity: 0.7;
+        }
 
-      .sidebar p {
-          font-size: 14px;
-          font-weight: normal;
-      }
+        .sidebar h1 {
+            font-size: 18px;
+            font-weight: 600;
+        }
 
-      .gameWrap {
-          background: #484848;
-          flex-grow: 1;
-          min-width: 0;
-          position: relative;
-          display: flex;
-          flex-direction: column;
-      }
+        .sidebar p {
+            font-size: 14px;
+            font-weight: normal;
+        }
 
-      .gameTitle {
-          padding-top: 8px;
-          box-sizing: border-box;
-          width: 100%;
-          text-align: center;
-          color: #dedede;
-          font-family: Verdana, Roboto, sans-serif;
-          font-size: 24px;
-      }
+        .gameWrap {
+            flex-grow: 1;
+            min-width: 0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
 
-      #game canvas {
-          width: 100%;
-          background: #1a1a1a;
-      }
+        .gameTitle {
+            padding-top: 8px;
+            box-sizing: border-box;
+            width: 100%;
+            text-align: center;
+            color: #dedede;
+            font-family: Verdana, Roboto, sans-serif;
+            font-size: 24px;
+        }
 
-      .btPosition {
-          position: absolute;
-          top: 5px;
-          right: 5px;
-          z-index: 100;
-      }
+        #game {
+            flex: 1;
+            /*background: #5a5757;*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
 
-      .showPanel {
-          background: #f0f0f0;
-          display: none;
-          padding: 5px;
-          border-radius: 5px;
-      }
+        #game canvas {
+            position: static !important;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
 
-      .showPanel.btPosition {
-          right: unset;
-          left: 5px;
-      }
+        .btPosition {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            z-index: 100;
+        }
 
-      .showPanel button {
-          background: none;
-          border: none;
-          cursor: pointer;
-      }
+        .showPanel {
+            background: #f0f0f0;
+            display: none;
+            padding: 5px;
+            border-radius: 5px;
+        }
 
-      .toggleButton {
-          padding: 5px;
-          margin: 0;
-          border-radius: 8px;
-          background: #dedede;
-          border: none;
-          font-size: 20px;
-          line-height: 20px;
-          cursor: pointer;
-      }
+        .showPanel.btPosition {
+            right: unset;
+            left: 5px;
+        }
 
-      .minimized .showPanel {
-          display: block;
-      }
+        .showPanel button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
 
-      .minimized .toggleButton,
-      .minimized .sidebar {
-          display: none;
-      }
+        .toggleButton {
+            padding: 5px;
+            margin: 0;
+            border-radius: 8px;
+            background: #dedede;
+            border: none;
+            font-size: 20px;
+            line-height: 20px;
+            cursor: pointer;
+        }
 
-      .minimized .toggleButton {
-          display: none;
-      }
-  </style>
-  <script>
-    function toggleSidebar() {
-      document.body.classList.toggle("minimized");
-    }
-  </script>
-  <script src="assets/lib/phaser.min.js"></script>
+        .minimized .showPanel {
+            display: block;
+        }
+
+        .minimized .toggleButton,
+        .minimized .sidebar {
+            display: none;
+        }
+
+        .minimized .toggleButton {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="assets/bg.css">
+    <script>
+        function toggleSidebar() {
+            document.body.classList.toggle("minimized");
+        }
+    </script>
+    <script src="assets/lib/phaser.min.js"></script>
 </head>
-<body>
+<body class="commonBg">
 <div class="wrap">
-  <div class="sidebar" id="sidebar">
-    <button class="toggleButton btPosition" onclick="toggleSidebar()">✖</button>
-    <div id="stories"></div>
-  </div>
+    <div class="sidebar" id="sidebar">
+        <button class="toggleButton btPosition" onclick="toggleSidebar()">✖</button>
+        <div id="stories"></div>
+    </div>
 
-  <div class="gameWrap">
-    <div id="gameTitle" class="gameTitle">Loading...</div>
-    <div id="game"></div>
-  </div>
+    <div class="gameWrap">
+        <div id="gameTitle" class="gameTitle">Loading...</div>
+        <div id="game"></div>
+    </div>
 
-  <div class="showPanel btPosition" id="showPanel" draggable="true">
-    <button onclick="toggleSidebar()">V</button>
-  </div>
+    <div class="showPanel btPosition" id="showPanel" draggable="true">
+        <button onclick="toggleSidebar()">V</button>
+    </div>
 </div>
 
 </body>

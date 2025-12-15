@@ -1,5 +1,5 @@
-import { IStory } from "../../../storybook/interfaces";
-import { TestButton } from "./TestButton";
+import { IStory } from "../interfaces";
+import { TestButton } from "../../src/components/Test/TestButton";
 
 export const testButtonStory: IStory = {
   title: "TestButton",

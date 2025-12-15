@@ -1,0 +1,61 @@
+{
+	"textures": [
+		{
+			"image": "main.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 96,
+				"h": 136
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "ui.useful.bg.nine.32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 92,
+						"h": 76
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 92,
+						"h": 76
+					},
+					"frame": {
+						"x": 2,
+						"y": 2,
+						"w": 92,
+						"h": 76
+					}
+				},
+				{
+					"filename": "icon.close_cross.white.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 52,
+						"h": 52
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 52,
+						"h": 52
+					},
+					"frame": {
+						"x": 2,
+						"y": 82,
+						"w": 52,
+						"h": 52
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://github.com/odrick/free-tex-packer-core",
+		"version": "0.3.5"
+	}
+}

@@ -23,6 +23,8 @@ const titleEl = document.getElementById("gameTitle");
 let prevStoryClose: () => void | undefined;
 const runInGame = async (story: IStory, game: Phaser.Game) => {
   prevStoryClose?.();
+
+  setSearchParam("title", story.title);
   titleEl!.innerHTML = story.title;
   const scene = game.scene.getScene(StoryScene.name);
   prevStoryClose = await story.run(scene);
@@ -31,7 +33,10 @@ const runInGame = async (story: IStory, game: Phaser.Game) => {
 let storiesIndex = 0;
 stories.forEach((story) => {
   if (story.run != null) {
-    addStory(story as IStory, storiesEl, storiesIndex == 0);
+    const isStartIndex = storiesIndex === 0;
+    const titleParam = getSearchParam("title");
+    const isStart = titleParam != null ? titleParam === story.title : isStartIndex;
+    addStory(story as IStory, storiesEl, isStart);
     storiesIndex++;
   } else if (story.template === "titleDelimiter") {
     addStoryDelimiter(story, storiesEl);
@@ -76,4 +81,16 @@ function addElement({ storyTag, className, innerHtml, parent }: IAddProps) {
   el.classList.add(className);
   parent.append(el);
   return el;
+}
+
+function setSearchParam(param: string, value: string) {
+  const url = new URL(window.location.href);
+  url.searchParams.set(param, value);
+  window.history.replaceState({}, "", url.toString());
+}
+
+function getSearchParam(param: string): string | undefined {
+  const paramValue = new URLSearchParams(window.location.search).get(param);
+
+  return paramValue != null ? decodeURI(paramValue) : undefined;
 }

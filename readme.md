@@ -1,18 +1,25 @@
 # Optimized Phaser Webpack Template
 
+v.1.2.0 
+
 Just copy and use with `npm run start`, `npm run build`
 
 - [Online Storybook Demo](https://kvisaz.github.io/phaser-webpack-template/storybook/index.html)
 - [GitHub](https://github.com/Kvisaz/phaser-webpack-template)
+- [Changelog](./changelog.md)
 
 Features
 - Webpack
-- Phaser 3.80
+- Phaser 3.90
 - fast build (Phaser.js as static asset + esbuild-loader)
 - TypeScript
 - Storybook for component- driven development
 - Prettier
 - Jest/TsJest support
+- `npm run atlas` - make atlas from src_assets/atlas
+- `npm run assets` - generate src/autoAssetsConfig.ts with correct relative path
+- `public` folder for html, css and other assets and files.  Any assets in this folder will have relative url like `./assets/images/space3.png`
+- `src_assets` folder for assets sources. 
 
 Extremely fast update and reload for small project editing:
 `webpack 5.93.0 compiled successfully in 59 ms`

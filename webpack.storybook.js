@@ -57,7 +57,7 @@ module.exports = (env, argv) => {
       new CopyWebpackPlugin({
         patterns: [
           {
-            from: "src/assets",
+            from: "public/assets",
             to: "assets"
           }
         ]

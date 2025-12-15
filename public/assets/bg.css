@@ -1,0 +1,17 @@
+/* waves */
+.commonBg {
+    --s: 107px; /* control the size*/
+    --c1: #183008;
+    --c2: #122806;
+
+    background:
+            conic-gradient(from -45deg,var(--c1) 90deg,#0000 0 180deg,var(--c2) 0 270deg,#0000 0)
+            0 calc(var(--s)/2)/var(--s) var(--s),
+            conic-gradient(from 135deg at 50% 0,var(--c1) 90deg,var(--c2) 0)
+            0 0/calc(2*var(--s)) var(--s);
+}
+
+canvas {
+    /*box-shadow: #063f45 0 0 32px;*/
+    /*background: linear-gradient(180deg, #ABECFE 0%, #52C9E9 54%, #03A9D7 100%);*/
+}
