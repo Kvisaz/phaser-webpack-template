@@ -11,3 +11,6 @@
 - public folder like in big frontend
 - src_assets folder for assets sources
 
+#### 1.2.1 patch
+
+- `free-tex-packer-core` target for  `0.3.4`, because `0.3.5` is log spamming

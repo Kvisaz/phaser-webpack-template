@@ -13,6 +13,18 @@ export const autoAssetsConfig = {
         "./assets/atlases/main.png"
       ]
     },
+    phaser3Logo: {
+      url: "./assets/images/phaser3-logo.png",
+      name: "phaser3Logo"
+    },
+    red: {
+      url: "./assets/images/red.png",
+      name: "red"
+    },
+    space3: {
+      url: "./assets/images/space3.png",
+      name: "space3"
+    },
     uiUsefulBgNine32: {
       url: "./assets/atlases/klondike_01.png",
       name: "uiUsefulBgNine32",
@@ -27,18 +39,21 @@ export const autoAssetsConfig = {
   preload: {
     sounds: [],
     fonts: [],
-    images: [],
+    images: [
+      {
+        name: "phaser3Logo",
+        url: "./assets/images/phaser3-logo.png"
+      },
+      {
+        name: "red",
+        url: "./assets/images/red.png"
+      },
+      {
+        name: "space3",
+        url: "./assets/images/space3.png"
+      }
+    ],
     atlases: [
-      {
-        name: "atlases",
-        jsonUrl: "./assets/atlases.json",
-        pngUrl: "./assets/atlases.png"
-      },
-      {
-        name: "atlases05x",
-        jsonUrl: "./assets/atlases@0.5x.json",
-        pngUrl: "./assets/atlases@0.5x.png"
-      },
       {
         name: "klondike01",
         jsonUrl: "./assets/atlases/klondike_01.json",

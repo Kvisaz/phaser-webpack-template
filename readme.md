@@ -1,6 +1,6 @@
 # Optimized Phaser Webpack Template
 
-v.1.2.0 
+v.1.2.1
 
 Just copy and use with `npm run start`, `npm run build`
 

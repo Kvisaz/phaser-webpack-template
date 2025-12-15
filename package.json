@@ -1,6 +1,6 @@
 {
   "name": "phaser-webpack-template",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --mode development",
@@ -36,6 +36,6 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4",
     "@kvisaz/phaser-sugar": "^1.1.6",
-    "free-tex-packer-core": "^0.3.4"
+    "free-tex-packer-core": "0.3.4"
   }
 }
