@@ -43,7 +43,7 @@ Phaser подключен как статическая библиотека, и
 
 Не запускай typecheck, lint, браузер или dev server без прямой просьбы пользователя.
 
-Не запускай Storybook-команды без прямой просьбы пользователя. Это относится к `npm run storybook`, `npm run build-storybook` и любым эквивалентным Storybook dev-server/build-командам.
+Не запускай Storybook-команды без прямой просьбы пользователя. Это относится к `npm run storybook` и любым эквивалентным Storybook dev-server/build-командам.
 
 Можно советовать запустить:
 - `npm run typecheck`

@@ -45,7 +45,6 @@ npm run build
 - `npm run yandex` - production-сборка и запуск Yandex SDK dev proxy.
 - `npm run yandex-dev-mode` - то же, что `npm run yandex`.
 - `npm run storybook` - опциональный ручной запуск Storybook.
-- `npm run build-storybook` - опциональная ручная сборка Storybook.
 
 ## Ассеты
 
@@ -89,7 +88,8 @@ npm run assets
 
 Storybook оставлен как дополнительный ручной инструмент для разработки и
 демонстрации UI/scene-компонентов. Он не нужен для обычного запуска,
-typecheck или production-сборки игры.
+typecheck или production-сборки игры. Сборка Storybook в `docs` выполняется
+только вручную, вне стандартных npm scripts.
 
 ## Почему Webpack
 
