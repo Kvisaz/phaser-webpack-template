@@ -2,19 +2,6 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { EsbuildPlugin } = require("esbuild-loader");
-const os = require("os");
-
-function getChromeOsName() {
-  const platform = os.platform();
-
-  if (platform === "darwin") {
-    return "Google Chrome";
-  } else if (platform === "linux") {
-    return "google-chrome";
-  } else {
-    return "chrome";
-  }
-}
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === "production";
@@ -69,13 +56,7 @@ module.exports = (env, argv) => {
       },
       compress: true,
       port: 8080,
-      open: {
-        target: ["http://localhost:8080"],
-        app: {
-          name: getChromeOsName(),
-          arguments: []
-        }
-      }
+      open: false
     }
   };
 };

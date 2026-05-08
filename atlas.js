@@ -29,6 +29,21 @@ const BASE_OPTIONS = {
   packer: "MaxRectsPacker",
 };
 
+/**
+ * Per-atlas options.
+ * `scale` physically resizes frames in the generated atlas png/json; any visual
+ * compensation for a specific effect should live in its scene config.
+ *
+ * Available scaleMethod values in free-tex-packer-core:
+ * BILINEAR, NEAREST_NEIGHBOR, BICUBIC, HERMITE, BEZIER.
+ */
+const ATLAS_OPTIONS = {
+  // secondary: {
+  //   scale: 0.5,
+  //   scaleMethod: "HERMITE",
+  // },
+};
+
 // опционально — включить генерацию helper'ов
 const GENERATE_PHASER_HELPER = false;
 const HELPER_OUTPUT_DIR = path.resolve(__dirname, "src/assets/atlases/generated");
@@ -84,7 +99,11 @@ async function packAtlas(atlasName, dir) {
     }
 
     console.log(`🔧 Пакуем "${atlasName}" из "${dir}" (${images.length} шт.)...`);
-    const files = await packAsync(images, { ...BASE_OPTIONS, textureName: atlasName });
+    const files = await packAsync(images, {
+      ...BASE_OPTIONS,
+      ...(ATLAS_OPTIONS[atlasName] || {}),
+      textureName: atlasName,
+    });
 
     await ensureDir(OUTPUT_DIR);
     for (const f of files) {
