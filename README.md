@@ -17,7 +17,6 @@ Webpack-шаблон для Phaser 3 игр с TypeScript, быстрым dev-с
 - Jest / ts-jest
 - free-tex-packer-core для атласов
 - `@kvisaz/phaser-sugar`
-- `phaser3-rex-plugins`
 - опциональные Yandex Games helpers
 - опциональный Storybook
 

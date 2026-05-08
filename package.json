@@ -20,8 +20,7 @@
     "@kvisaz/phaser-sugar": "^1.1.8",
     "@types/ysdk": "^1.2.0",
     "free-tex-packer-core": "^0.3.4",
-    "phaser": "3.90.0",
-    "phaser3-rex-plugins": "^1.80.15"
+    "phaser": "3.90.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
