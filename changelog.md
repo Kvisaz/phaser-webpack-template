@@ -1,5 +1,14 @@
 # Changelog
 
+### 1.3.0
+
+- Обновлена общая библиотека `src/common`.
+- Обновлены Phaser, TypeScript и сопутствующие конфиги.
+- Обновлены atlas/assets helpers.
+- Добавлены `AGENTS.md`, `.agents/skills` и `docs/ai` для проектных правил.
+- Добавлены Yandex Games helpers и dev proxy scripts.
+- README переименован в `README.md` и обновлен под текущее состояние шаблона.
+
 ### 1.2.0
 - Phaser 3.90
 - Phaser-sugar library 1.1.6
